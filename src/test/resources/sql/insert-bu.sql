@@ -1,0 +1,2 @@
+insert into masters.master_business_unit(id,business_unit_code,business_unit_name,business_unit_manager_id,business_unit_description,status)
+    values ('1234','BU_TEST','TEST BU',null,'This is a test BU','ACTIVE');

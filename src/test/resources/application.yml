@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:test;DB_CLOSE_ON_EXIT=FALSE;INIT=CREATE SCHEMA IF NOT EXISTS masters\;SET SCHEMA masters
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    defer-datasource-initialization: true
+
+  sql:
+    init:
+      mode: always
+application:
+  security:
+    jwt:
+      secret:
+        key: 586B633834416E396D7436753879382F423F4428482B4C6250655367566B5970
+        expiration: 900000
+server:
+  servlet:
+    context-path: /eprocurement/api/internal/users
+  port: 9004

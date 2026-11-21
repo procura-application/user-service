@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  application:
+    name: user-service
+application:
+  security:
+    jwt:
+      secret:
+        key: ${JWT_KEY}
+        expiration: ${JWT_EXPIRATION_TIME}
+server:
+  servlet:
+    context-path: /eprocurement/api/internal/users
+  port: 9004
+
+
+
